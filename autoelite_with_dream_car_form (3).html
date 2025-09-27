@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AutoElite - Concesionario Premium</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-900">
+
+  <!-- Encabezado -->
+  <header class="bg-black text-white p-6 shadow-lg">
+    <h1 class="text-3xl font-bold text-center">AutoElite 🚗✨</h1>
+    <p class="text-center text-gray-300">Concesionario Premium de Autos de Lujo</p>
+  </header>
+
+  <!-- Presentación -->
+  <section class="p-8 text-center">
+    <h2 class="text-2xl font-semibold mb-4">Bienvenido a AutoElite</h2>
+    <p class="max-w-2xl mx-auto text-lg">
+      En <b>AutoElite</b> ofrecemos una experiencia única en la compra de vehículos de lujo. 
+      Contamos con una selección exclusiva de autos deportivos y de alta gama que combinan 
+      potencia, tecnología y elegancia.
+    </p>
+  </section>
+
+  <!-- Galería -->
+  <section class="p-8 bg-white">
+    <h2 class="text-2xl font-semibold text-center mb-6">Nuestra Colección</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <img src="https://hips.hearstapps.com/hmg-prod/images/bugatti-divo-lady-bug-2020-1600-05-1614854784.jpg?crop=1.00xw:0.752xh;0,0.106xh" alt="Auto deportivo" class="rounded-lg shadow-lg">
+      <img src="https://storage.googleapis.com/fotosautos/automotora/ASTARA/751/1201776/FERRARI-F8-oyesdm.webp" alt="Ferrari rojo" class="rounded-lg shadow-lg">
+      <img src="https://www.nitro.pe/images/2019/noviembre/Lambo_portada.jpg" alt="Lamborghini" class="rounded-lg shadow-lg">
+    </div>
+  </section>
+
+  <!-- Video -->
+  <section class="p-8 text-center bg-gray-50">
+    <h2 class="text-2xl font-semibold mb-6">Explora la Experiencia AutoElite</h2>
+    <iframe class="w-full h-96 rounded-lg shadow-lg max-w-4xl mx-auto" 
+      src="https://www.youtube.com/embed/5MgBikgcWnY" 
+      title="Video AutoElite" 
+      frameborder="0" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+      allowfullscreen>
+    </iframe>
+  </section>
+
+  <!-- Nueva sección: Verifica tu auto de ensueño -->
+  <section id="sueño" class="p-8 bg-white">
+    <h2 class="text-2xl font-semibold text-center mb-4">¿Puede obtener su auto de ensueño?</h2>
+    <p class="text-center max-w-2xl mx-auto mb-6">Rellene los datos y nuestro equipo le contactará para verificar la posibilidad de conseguir el vehículo que sueña.</p>
+
+    <div class="max-w-3xl mx-auto">
+      <form id="dreamCarForm" class="grid grid-cols-1 gap-4" onsubmit="return handleDreamForm(event)">
+        <div>
+          <label class="block font-medium">Nombres</label>
+          <input type="text" name="nombres" id="nombres" required class="w-full p-3 rounded border" placeholder="Ej. Juan">
+        </div>
+
+        <div>
+          <label class="block font-medium">Apellidos</label>
+          <input type="text" name="apellidos" id="apellidos" required class="w-full p-3 rounded border" placeholder="Ej. Pérez">
+        </div>
+
+        <div>
+          <label class="block font-medium">Número de celular</label>
+          <input type="tel" name="telefono" id="telefono" required pattern="[0-9+()\-\s]{7,20}" class="w-full p-3 rounded border" placeholder="Ej. +51 912 345 678">
+        </div>
+
+        <div>
+          <label class="block font-medium">Gmail (correo electrónico)</label>
+          <input type="email" name="email" id="email" required class="w-full p-3 rounded border" placeholder="ejemplo@gmail.com">
+        </div>
+
+        <div>
+          <label class="block font-medium">Modelo que desea (opcional)</label>
+          <input type="text" name="modelo" id="modelo" class="w-full p-3 rounded border" placeholder="Ej. Ferrari F8 Tributo">
+        </div>
+
+        <div>
+          <label class="inline-flex items-center">
+            <input type="checkbox" id="consent" required class="mr-2"> Acepto ser contactado por AutoElite.
+          </label>
+        </div>
+
+        <div class="text-center">
+          <button type="submit" class="px-6 py-3 bg-black text-white rounded shadow">Enviar</button>
+        </div>
+      </form>
+
+      <p id="formMessage" class="mt-4 text-center text-green-600 font-medium" style="display:none;"></p>
+    </div>
+  </section>
+
+  <!-- Servicios -->
+  <section class="p-8 bg-white">
+    <h2 class="text-2xl font-semibold text-center mb-6">Nuestros Servicios</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+      <div class="p-6 shadow rounded-lg bg-gray-100">
+        <h3 class="font-bold mb-2">Venta de Autos</h3>
+        <p>Modelos exclusivos de marcas reconocidas como Ferrari, Lamborghini, Porsche y más.</p>
+      </div>
+      <div class="p-6 shadow rounded-lg bg-gray-100">
+        <h3 class="font-bold mb-2">Financiamiento</h3>
+        <p>Opciones de crédito flexibles y adaptadas a tus necesidades.</p>
+      </div>
+      <div class="p-6 shadow rounded-lg bg-gray-100">
+        <h3 class="font-bold mb-2">Mantenimiento Premium</h3>
+        <p>Servicio técnico especializado con repuestos originales.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section class="p-8 text-center bg-gray-900 text-white">
+    <h2 class="text-2xl font-semibold mb-4">Contáctanos</h2>
+    <p>Email: contacto@autoelite.com</p>
+    <p>Teléfono: +51 999 888 777</p>
+    <p>Nos ubicamos en: Av. Gral. Juan Antonio Pezet 1522, San Isidro 15076</p>
+
+    <!-- Mapa de ubicación -->
+    <div class="mt-6">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3900.853977567212!2d-77.03653272509766!3d-12.092364188160729!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c8445d95c0d7%3A0x25a6c5b1e888a3db!2sAv.%20Gral.%20Juan%20Antonio%20Pezet%201522%2C%20San%20Isidro%2015076!5e0!3m2!1ses-419!2spe!4v1727377710000!5m2!1ses-419!2spe" 
+        width="100%" 
+        height="350" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+
+    <!-- Proveedores -->
+    <div class="mt-8">
+      <h3 class="text-xl font-semibold mb-4">Sigue a nuestros proveedores</h3>
+      <a href="https://www.instagram.com/ferrari/" target="_blank" class="inline-flex items-center space-x-2 bg-red-600 text-white px-4 py-2 rounded shadow hover:bg-red-700">
+        <img src="https://cdn-icons-png.flaticon.com/512/743/743922.png" alt="Logo Auto" class="w-6 h-6">
+        <span>Ferrari en Instagram</span>
+      </a>
+    </div>
+
+    <p class="mt-6">Síguenos en redes sociales para conocer nuestras novedades 🚘✨</p>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-black text-white p-4 text-center">
+    <p>&copy; 2025 AutoElite. Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+    function handleDreamForm(e) {
+      e.preventDefault();
+      const nombres = document.getElementById('nombres').value.trim();
+      const apellidos = document.getElementById('apellidos').value.trim();
+      const telefono = document.getElementById('telefono').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const modelo = document.getElementById('modelo').value.trim();
+
+      const msg = `Gracias ${nombres} ${apellidos}. Hemos recibido tu solicitud para verificar si puedes obtener: ${modelo || 'tu auto de ensueño'}.\nNos contactaremos al ${telefono} o al correo ${email}.`;
+
+      const formMessage = document.getElementById('formMessage');
+      formMessage.style.display = 'block';
+      formMessage.textContent = msg;
+
+      document.getElementById('dreamCarForm').reset();
+      return false;
+    }
+  </script>
+
+</body>
+</html>
